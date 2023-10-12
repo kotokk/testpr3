@@ -1,7 +1,16 @@
 import unittest
 class PoleChudesGame:
     def __init__(self, word, topic, hints):
-        return
+        self.word = word.upper()
+        self.hidden_word = ['_' if char.isalpha() else char for char in self.word]
+        self.topic = topic
+        self.hints = hints
+        self.guessed_letters = set()
+        self.player1_score = 0
+        self.player2_score = 0
+        self.current_turn_score = 0
+        self.total_score = 0
+        self.player_turn = 1  # Игрок 1 начинает
 
 
 class TestPoleChudesGameInitialization(unittest.TestCase):
