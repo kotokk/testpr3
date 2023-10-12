@@ -12,7 +12,7 @@ class PoleChudesGame:
         self.player_turn = 1  # Игрок 1 начинает
     
     def display_hints(self):
-        return 
+        return ', '.join(self.hints)
 
 import unittest
 
