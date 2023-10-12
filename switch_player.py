@@ -12,7 +12,7 @@ class PoleChudesGame:
         self.player_turn = 1  # Игрок 1 начинает
     
     def switch_player_turn(self):
-        return
+        self.player_turn = 3 - self.player_turn  # Переключение между 1 и 2 игроками
 
 import unittest
 
