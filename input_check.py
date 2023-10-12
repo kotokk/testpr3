@@ -13,7 +13,22 @@ class PoleChudesGame:
         self.player_turn = 1  # Игрок 1 начинает
 
 def is_valid_letter(user_input, game):
-    return 
+     # Проверка на пустой ввод
+    if not user_input:
+        print("Вы ввели пустую строку. Пожалуйста, введите букву.")
+        return False
+
+    # Проверка на русскую букву
+    if not user_input.isalpha() or user_input not in "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ":
+        print("Некорректный ввод. Введите русскую букву.")
+        return False
+
+    # Проверка, что буква еще не угадывалась
+    if user_input in game.guessed_letters:
+        print("Эта буква уже угадывалась. Пожалуйста, введите другую букву.")
+        return False
+
+    return True
 
 class TestIsValidLetter(unittest.TestCase):
     def setUp(self):
