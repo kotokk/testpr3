@@ -18,7 +18,17 @@ class PoleChudesGame:
             self.player2_score += self.current_turn_score
 
     def guess_letter(self, letter):
-        return
+        letter = letter.upper()
+        if letter.isalpha() and letter not in self.guessed_letters:
+            self.guessed_letters.add(letter)
+            if letter in self.word:
+                for i, char in enumerate(self.word):
+                    if char == letter:
+                        self.hidden_word[i] = letter
+                        self.update_scores()  # Обновляем очки текущего игрока
+                
+                return True  # Правильно угадана буква
+        return False  # Буква не входит в слово
     
 import unittest
 
