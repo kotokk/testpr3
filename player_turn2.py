@@ -73,7 +73,18 @@ class PoleChudesGame:
             self.player2_score += self.current_turn_score
 
 def player_2_turn(game):
-    return
+    print("\nХод игрока 2:")
+    available_letters = [letter for letter in "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ" if letter not in game.guessed_letters]
+    if available_letters:
+        guessed_letter = random.choice(available_letters)
+        print(f"Игрок 2 называет букву: {guessed_letter}")
+        result = game.guess_letter(guessed_letter)
+        if result:
+            print(f"ДАЙТЕ ПРОЧИТАТЬ СТИХ!")
+            
+        else:
+            print(f"ВОТ ЧЕРТ!")
+        game.spin_wheel(result)
 
 
 import unittest
