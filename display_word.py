@@ -12,7 +12,7 @@ class PoleChudesGame:
         self.player_turn = 1  # Игрок 1 начинает
 
     def display_word(self):
-        return
+        return ' '.join(self.hidden_word)
 
 import unittest
 
