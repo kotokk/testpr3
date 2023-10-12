@@ -16,7 +16,35 @@ class PoleChudesGame:
         self.player_turn = 3 - self.player_turn  # Переключение между 1 и 2 игроками
 
     def spin_wheel(self, guessed):
-        return
+        wheel = [600, 600, 100, 1000, 0, 700, 700, 700, 200, 300, 500, "ПРИЗ", 0, 900, 400, 800, 13]
+        result = random.choice(wheel)
+        
+        print("\nКрутим барабан...")
+        print("Результат кручения барабана: {result}")
+
+        if(guessed):
+            if isinstance(result, int):
+                self.current_turn_score = result
+                print(f"Очки игрока {self.player_turn} в текущем ходе: {self.current_turn_score}")
+                self.switch_player_turn()
+            elif result == "ПРИЗ":
+                print("Вы выиграли ПРИЗ - клубничку!")
+                print(f"""⠀⠀⠀⠀⠀⢀⡀⠀⠀⠀⠀⠀⡄⠀⠀⠀⠀⢀⠀⠀
+⠀⠀⠀⠀⠀⠀⣏⠓⠒⠤⣰⠋⠹⡄⠀⣠⠞⣿⠀⠀
+⠀⠀⠀⢀⠄⠂⠙⢦⡀⠐⠨⣆⠁⣷⣮⠖⠋⠉⠁⠀
+⠀⠀⡰⠁⠀⠮⠇⠀⣩⠶⠒⠾⣿⡯⡋⠩⡓⢦⣀⡀
+⠀⡰⢰⡹⠀⠀⠲⣾⣁⣀⣤⠞⢧⡈⢊⢲⠶⠶⠛⠁
+⢀⠃⠀⠀⠀⣌⡅⠀⢀⡀⠀⠀⣈⠻⠦⣤⣿⡀⠀⠀
+⠸⣎⠇⠀⠀⡠⡄⠀⠷⠎⠀⠐⡶⠁⠀⠀⣟⡇⠀⠀
+⡇⠀⡠⣄⠀⠷⠃⠀⠀⡤⠄⠀⠀⣔⡰⠀⢩⠇⠀⠀
+⡇⠀⠻⠋⠀⢀⠤⠀⠈⠛⠁⠀⢀⠉⠁⣠⠏⠀⠀⠀
+⣷⢰⢢⠀⠀⠘⠚⠀⢰⣂⠆⠰⢥⡡⠞⠁⠀⠀⠀⠀
+⠸⣎⠋⢠⢢⠀⢠⢀⠀⠀⣠⠴⠋⠀⠀⠀⠀⠀⠀⠀
+⠀⠘⠷⣬⣅⣀⣬⡷⠖⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠈⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀""")
+        else:
+            print("Чтобы получить очки, надо букву угадать!")
+            self.switch_player_turn()
 
 
 import unittest
