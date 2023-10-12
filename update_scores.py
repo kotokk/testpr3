@@ -12,7 +12,10 @@ class PoleChudesGame:
         self.player_turn = 1  # Игрок 1 начинает
     
     def update_scores(self):
-        return
+        if self.player_turn == 1:
+            self.player1_score += self.current_turn_score
+        else:
+            self.player2_score += self.current_turn_score
 
 import unittest
 
